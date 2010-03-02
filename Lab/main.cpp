@@ -119,7 +119,7 @@ char* chomp(char* b) {
 	return src;
 }
 
-int32_t main (int32_t argc, char * const argv[]) {
+int main (int argc, char * const argv[]) {
 	// insert code here...
 	FILE* src = fopen("INPUT", "rt");
 	if ( !src ) {
