@@ -1,5 +1,4 @@
 #include <iostream>
-#define int __int64_t
 
 static const char* alph = "0123456789ABCDEF";
 static const char* valid = "0123456789";
