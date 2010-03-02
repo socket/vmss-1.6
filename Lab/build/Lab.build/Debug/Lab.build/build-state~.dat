@@ -1,51 +1,0 @@
-TLab
-v7
-r0
-t289213476.514644
-cCheck dependencies
-cCompileC build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o /Users/socket/University/vmss-1.6/Lab/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004B7E777C00000000000000EE
-t1266579324
-s238
-
-N/Users/socket/University/vmss-1.6/Lab/build/Debug/Lab
-t2
-s0
-
-N/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/Lab.LinkFileList
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o
-t2
-s0
-
-N/Users/socket/University/vmss-1.6/Lab/main.cpp
-c000000004B8CD4A4000000000000011B
-t1267520676
-s283
-i<iostream>
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies289213476#289213476#0(0"0(0#1#0"0#0"0#
-
-CCompileC build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o /Users/socket/University/vmss-1.6/Lab/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s289213476.241378
-e289213476.514606
-r0
-xCompileC
-xbuild/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o
-x/Users/socket/University/vmss-1.6/Lab/main.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@54"Compile /Users/socket/University/vmss-1.6/Lab/main.cpp289213476#289213476#0(473"/Users/socket/University/vmss-1.6/Lab/main.cpp: In function 'int str2int(const char*)':/Users/socket/University/vmss-1.6/Lab/main.cpp:11: error: invalid conversion from 'const char*' to 'char*'/Users/socket/University/vmss-1.6/Lab/main.cpp:14: error: cannot convert 'bool' to 'char*' in initialization/Users/socket/University/vmss-1.6/Lab/main.cpp:14: warning: unused variable 'c'/Users/socket/University/vmss-1.6/Lab/main.cpp:10: warning: unused variable 'multiplier'4(4@48"Invalid conversion from 'const char*' to 'char*'289213476#88#107#0(6@46"/Users/socket/University/vmss-1.6/Lab/main.cpp289213476#11#0#11#0#34"invalid conversion from '*' to '*'0(4@50"Cannot convert 'bool' to 'char*' in initialization289213476#195#109#0(6@46"/Users/socket/University/vmss-1.6/Lab/main.cpp289213476#14#0#14#0#0"0(22@19"Unused variable 'c'289213476#304#80#0(6@46"/Users/socket/University/vmss-1.6/Lab/main.cpp289213476#14#0#14#0#19"unused variable '*'0(22@28"Unused variable 'multiplier'289213476#384#89#0(6@46"/Users/socket/University/vmss-1.6/Lab/main.cpp289213476#10#0#10#0#19"unused variable '*'0(0#0#46"/Users/socket/University/vmss-1.6/Lab/main.cpp3401403401131030528#1255"    cd /Users/socket/University/vmss-1.6/Lab    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-generated-files.hmap -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-own-target-headers.hmap -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-all-target-headers.hmap -iquote /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-project-headers.hmap -F/Users/socket/University/vmss-1.6/Lab/build/Debug -I/Users/socket/University/vmss-1.6/Lab/build/Debug/include -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/DerivedSources/x86_64 -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/DerivedSources -c /Users/socket/University/vmss-1.6/Lab/main.cpp -o /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o1#
-
-CLd /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab normal x86_64
-r0
-

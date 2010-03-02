@@ -2,6 +2,30 @@
 #define int __int64_t
 
 static const char* alph = "0123456789ABCDEF";
+static const char* valid = "0123456789";
+
+bool is_valid(char* str) {
+	int n = 0;
+	bool dot = false;
+	bool fl = false;
+	while(*str++) {
+		if ( !strchr(valid, *str) ) {
+			if ( n == 0 && *str == '-' ) {
+				fl = true;
+				continue;
+			}
+			if ( n > 0 && !dot && *str == '.'  ) {
+				dot = true;
+				if ( fl ) return false; // dot after minus
+				continue;
+			}
+			return false;
+		}
+		fl = false;
+		n++;
+	}
+	return true;
+}
 
 int str2int(char* str) {
 	register int multiplier = 1;
@@ -10,7 +34,7 @@ int str2int(char* str) {
 	while(*(++s_end)) multiplier *= 10;
 	
 	while(char c = *str++) {
-		if ( c == '\r' || c == '\n') break;
+		//if ( c == '\r' || c == '\n') break;
 		
 		value += multiplier * (c - '0');
 		multiplier /= 10;
@@ -105,6 +129,10 @@ int32_t main (int32_t argc, char * const argv[]) {
 	char buff[256];
 	while( char* line = fgets(buff, 256, src) ) {
 		if ( *line == '\r' || *line == '\n') continue;
+		if ( !is_valid(chomp(line)) ) {
+			std::cout << "INVALID STRING\n";
+			continue;
+		}
 		
 		char buff2[256];
 		char buff3[256];

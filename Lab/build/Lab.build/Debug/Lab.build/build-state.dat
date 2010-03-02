@@ -1,59 +1,0 @@
-TLab
-v7
-r0
-t289217933.981609
-cCheck dependencies
-cCompileC build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o /Users/socket/University/vmss-1.6/Lab/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cLd /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab normal x86_64
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004B7E777C00000000000000EE
-t1266579324
-s238
-
-N/Users/socket/University/vmss-1.6/Lab/build/Debug/Lab
-t1267525133
-s30160
-
-N/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/Lab.LinkFileList
-c000000004B8CD4A40000000000000063
-t1267520676
-s99
-
-N/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o
-t1267525133
-s96484
-
-N/Users/socket/University/vmss-1.6/Lab/main.cpp
-c000000004B8CE60D00000000000008B8
-t1267525133
-s2232
-i<iostream>
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies289217933#289217933#0(0"0(0#1#0"4300885448#0"0#
-
-CCompileC build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o /Users/socket/University/vmss-1.6/Lab/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s289217933.563391
-e289217933.958724
-r1
-xCompileC
-xbuild/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o
-x/Users/socket/University/vmss-1.6/Lab/main.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@54"Compile /Users/socket/University/vmss-1.6/Lab/main.cpp289217933#289217933#0(0"0(0#0#46"/Users/socket/University/vmss-1.6/Lab/main.cpp4300885448#1255"    cd /Users/socket/University/vmss-1.6/Lab    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-generated-files.hmap -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-own-target-headers.hmap -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-all-target-headers.hmap -iquote /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-project-headers.hmap -F/Users/socket/University/vmss-1.6/Lab/build/Debug -I/Users/socket/University/vmss-1.6/Lab/build/Debug/include -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/DerivedSources/x86_64 -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/DerivedSources -c /Users/socket/University/vmss-1.6/Lab/main.cpp -o /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o0#
-
-CLd /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab normal x86_64
-s289217933.958806
-e289217933.981570
-r1
-xLd
-x/Users/socket/University/vmss-1.6/Lab/build/Debug/Lab
-xnormal
-xx86_64
-lSLF07#2@58"Link /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab289217933#289217933#0(0"0(0#0#0"4300885448#477"    cd /Users/socket/University/vmss-1.6/Lab    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/socket/University/vmss-1.6/Lab/build/Debug -F/Users/socket/University/vmss-1.6/Lab/build/Debug -filelist /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/Lab.LinkFileList -mmacosx-version-min=10.6 -o /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab0#
-
