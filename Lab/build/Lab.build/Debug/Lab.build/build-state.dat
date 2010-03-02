@@ -1,0 +1,59 @@
+TLab
+v7
+r0
+t289217164.346138
+cCheck dependencies
+cCompileC build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o /Users/socket/University/vmss-1.6/Lab/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004B7E777C00000000000000EE
+t1266579324
+s238
+
+N/Users/socket/University/vmss-1.6/Lab/build/Debug/Lab
+t1267524354
+s36320
+
+N/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/Lab.LinkFileList
+c000000004B8CD4A40000000000000063
+t1267520676
+s99
+
+N/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o
+t1267524354
+s109272
+
+N/Users/socket/University/vmss-1.6/Lab/main.cpp
+c000000004B8CE302000000000000074B
+t1267524354
+s1867
+i<iostream>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies289217164#289217164#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o /Users/socket/University/vmss-1.6/Lab/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s289217154.115783
+e289217154.415967
+r1
+xCompileC
+xbuild/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o
+x/Users/socket/University/vmss-1.6/Lab/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@54"Compile /Users/socket/University/vmss-1.6/Lab/main.cpp289217154#289217154#0(205"/Users/socket/University/vmss-1.6/Lab/main.cpp: In function 'int main(int, char* const*)':/Users/socket/University/vmss-1.6/Lab/main.cpp:92: warning: deprecated conversion from string constant to 'char*'1(22@53"Deprecated conversion from string constant to 'char*'289217154#91#114#0(6@46"/Users/socket/University/vmss-1.6/Lab/main.cpp289217154#92#0#92#0#49"deprecated conversion from string constant to '*'0(0#0#46"/Users/socket/University/vmss-1.6/Lab/main.cpp4300885448#1255"    cd /Users/socket/University/vmss-1.6/Lab    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-generated-files.hmap -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-own-target-headers.hmap -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-all-target-headers.hmap -iquote /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Lab-project-headers.hmap -F/Users/socket/University/vmss-1.6/Lab/build/Debug -I/Users/socket/University/vmss-1.6/Lab/build/Debug/include -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/DerivedSources/x86_64 -I/Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/DerivedSources -c /Users/socket/University/vmss-1.6/Lab/main.cpp -o /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/main.o0#
+
+CLd /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab normal x86_64
+s289217154.416032
+e289217154.433451
+r1
+xLd
+x/Users/socket/University/vmss-1.6/Lab/build/Debug/Lab
+xnormal
+xx86_64
+lSLF07#2@58"Link /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab289217154#289217154#0(0"0(0#0#0"4300885448#477"    cd /Users/socket/University/vmss-1.6/Lab    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/socket/University/vmss-1.6/Lab/build/Debug -F/Users/socket/University/vmss-1.6/Lab/build/Debug -filelist /Users/socket/University/vmss-1.6/Lab/build/Lab.build/Debug/Lab.build/Objects-normal/x86_64/Lab.LinkFileList -mmacosx-version-min=10.6 -o /Users/socket/University/vmss-1.6/Lab/build/Debug/Lab0#
+

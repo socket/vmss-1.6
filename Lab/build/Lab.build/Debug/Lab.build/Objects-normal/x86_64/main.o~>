@@ -1,0 +1,2 @@
+/Users/socket/University/vmss-1.6/Lab/main.cpp: In function 'int main(int, char* const*)':
+/Users/socket/University/vmss-1.6/Lab/main.cpp:91: warning: deprecated conversion from string constant to 'char*'
