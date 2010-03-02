@@ -1,4 +1,5 @@
 #include <iostream>
+#define int __int64_t
 
 static const char* alph = "0123456789ABCDEF";
 
@@ -9,6 +10,8 @@ int str2int(char* str) {
 	while(*(++s_end)) multiplier *= 10;
 	
 	while(char c = *str++) {
+		if ( c == '\r' || c == '\n') break;
+		
 		value += multiplier * (c - '0');
 		multiplier /= 10;
 	}
@@ -82,19 +85,34 @@ void number2hex(char* number, char* output, int size) {
 	*(--pb)++ = '.';
 	
 	fract2hex(str2int(r), pb);
-	
-	_asm nop;
 }
 
-int main (int argc, char * const argv[]) {
+char* chomp(char* b) {
+	char* src = b;
+	while(*b++) {
+		if (*b=='\r' || *b=='\n') *b = 0;
+	}
+	return src;
+}
+
+int32_t main (int32_t argc, char * const argv[]) {
 	// insert code here...
-	std::cout << "Result: " << str2int("1234567") << "\n";
-	char buf1[128];
-	strcpy(buf1, "12345.6789");
-	char buf[128];
-	number2hex(buf1, buf, 128);
-	
-	std::cout << "\nV3: " << buf;
+	FILE* src = fopen("INPUT", "rt");
+	if ( !src ) {
+		std::cout << "INPUT not found\n";
+		return -1;
+	}
+	char buff[256];
+	while( char* line = fgets(buff, 256, src) ) {
+		if ( *line == '\r' || *line == '\n') continue;
+		
+		char buff2[256];
+		char buff3[256];
+		strcpy(buff3, line);
+		number2hex(line, buff2, 256);
+		std::cout << chomp(buff3) << " => " << buff2 << "\n";
+	}
+	fclose(src);
 	
 	return 0;
 }
