@@ -1,143 +1,114 @@
 #include <stdio.h>
 
-#define BIT_COUNT		6
-#define POINT_POS		2
-
-struct BITFIELD_T {
-	unsigned v : 1;
-};
-
-typedef struct BITFIELD_T BITFIELD;
-
-struct INTFIELD_T {
-	BITFIELD bits[BIT_COUNT];
-};
-
-typedef struct INTFIELD_T INTFIELD;
-
-const char* bits2string(INTFIELD* fld) {
-	static char sbits[128];
-	sbits[0] = fld->bits[0].v ? '1' : '0';
-	sbits[1] = ':';
-	
-	for (int i=1; i<BIT_COUNT; ++i) {
-		sbits[i+1] = fld->bits[i].v?'1':'0';
-	}
-	sbits[BIT_COUNT+2] = 0;
-	
-	return sbits;
-}
-
-void string2bits(const char* bitstring, INTFIELD* fld) {
-	int i=0;
-	while (*bitstring) {
-		if ( *bitstring == ' ' ) {
-			bitstring++;
-			continue;
-		}
-		fld->bits[i++].v = (*bitstring++ == '1') ? 1 : 0;
-	}
-}
-
-void shift_left(INTFIELD* fld) {
-	for (int i=0; i<BIT_COUNT-1; ++i) {
-		fld->bits[i].v = fld->bits[i+1].v;
-	}
-	fld->bits[BIT_COUNT-1].v=0;
-}
-
-void shift_right(INTFIELD* fld) {
-	for (int i=BIT_COUNT-1; i>=0; --i) {
-		fld->bits[i].v = fld->bits[i-1].v;
-	}
-	fld->bits[0].v = 0;
-}
-
-void sum_bits(INTFIELD* b1, INTFIELD* b2, INTFIELD* res) {
-	int add = 0;
-	for (int i=BIT_COUNT-1; i>=0; --i) {
-		if ( b1->bits[i].v == 0 && b2->bits[i].v == 0 ) {
-			res->bits[i].v = add;
-			add = 0;
-		}
-		else if ((b1->bits[i].v == 1 && b2->bits[i].v == 0) || 
-				(b1->bits[i].v == 0 && b2->bits[i].v == 1)) {
-			res->bits[i].v = !add;
-		}
-		else if ( b1->bits[i].v == 1 && b2->bits[i].v == 1 ) {
-			res->bits[i].v = add;
-			add = 1;
-		}
-	}
-}
-
-void subtract_bits(INTFIELD* b1, INTFIELD* b2, INTFIELD* res) {
-	int sub = 0;
-	for (int i=BIT_COUNT-1; i>=0; --i) {
-		if ( b1->bits[i].v == 0 && b2->bits[i].v == 0 ) {
-			res->bits[i].v = sub;
-		}
-		else if ( b1->bits[i].v == 1 && b2->bits[i].v == 0 ) {
-			res->bits[i].v = !sub;
-			sub = 0;
-		}
-		else if ( b1->bits[i].v == 0 && b2->bits[i].v == 1 ) {
-			res->bits[i].v = !sub;
-			sub = 1;
-		}
-		else if ( b1->bits[i].v == 1 && b2->bits[i].v == 1 ) {
-			res->bits[i].v = sub;
-			//sub = 1;
-		}
-	}
-}
-
-void reverse_bits(INTFIELD* b, INTFIELD* res) {
-	for (int i=0; i<BIT_COUNT; i++ ) {
-		res->bits[i].v = !b->bits[i].v;
-	}
-}
+#include "vmss_common.h"
+#include "vmss_convert.h"
+#include "vmss_bitfields.h"
 
 int main (int argc, const char * argv[]) {
-	/*INTFIELD b1, b2, b3;
-	string2bits("00 1110", &b1);
-	string2bits("00 1101", &b2);
-	subtract_bits(&b1, &b2, &b3);
-	printf("%s", bits2string(&b3));
+	char buffer[256];
+	char *pb = buffer;
+	FILE* hsrc = fopen("INPUT.txt", "r");
 	
+	if ( !hsrc ) {
+		printf("Cannot open input file\n");
+		return -1;
+	}
 	
-	return 0;*/
-	/// 00,1001 / 00,1101
-	char result[100];
-	int pos = 0;
+	int bitcount = BIT_COUNT - 1;
 	
-	INTFIELD src, del, rdel;
-	string2bits("00 1001", &src);
-	string2bits("00 1101", &del);
-	
-	for (int i=0; i<BIT_COUNT; i++ ) {
-		shift_left(&src);
-		reverse_bits(&del, &rdel);
-		
-		printf("%s\n", bits2string(&src));
-		printf("%s\n", bits2string(&del));
-		
-		subtract_bits(&src, &del, &src);
-		printf("%s\n", bits2string(&src));
-		printf("-----\n");
+	while (pb = fgets(buffer, 256, hsrc) ) {
+		char *left, *right;
+		vmss_strchop(pb);
 
-		if ( src.bits[0].v == 1 ) { 
-			result[pos++] = '0';
-			sum_bits(&src, &del, &src);
+		left = right = pb;
+		while(*right && *right != ':') right++;
+		*right++ = '\0';
+		
+		// convert dec to bin
+		printf("%s / %s =>", left, right);
+		
+		char left2[128], right2[128];
+		int countl = vmss_removedot(left, left2);
+		int countr = vmss_removedot(right, right2);
+		int result = 0;
+		
+		if ( countl > countr ) {
+			vmss_addzeroes( right2, countl-countr );
 		}
 		else {
-			result[pos++] = '1';
+			vmss_addzeroes( left2, countr-countl );
 		}
-	}
 
-	result[pos] = 0;
+		double ld, rd;
+		result |= vmss_str2double(left2, 10, &ld);
+		result |= vmss_str2double(right2, 10, &rd);		
+		
+		if ( rd == 0 ) {
+			result = -1;
+		}
+		
+		// convert back
+		
+		char binleft[128];
+		char binright[128];
+		int power = 0;		
+		
+		//printf("%s / %s =>", left2, right2);
+		if ( SUCCESS ( result ) ) { 
+			while (fabs(ld) > fabs(rd) ) {
+				rd *= 10.0f;
+				power++;
+			}
+			
+			
+			result |= vmss_double2str(ld, 2, binleft, bitcount);
+			result |= vmss_double2str(rd, 2, binright, bitcount);
+			
+			printf("%f / %f => %s / %s =>", ld, rd, binleft, binright);
+		}
+		
+		if ( SUCCESS( result ) ) {
+			char binres[128], binresdec[128], binreshex[128];
+			INTFIELD src, del;
+
+			string2bits(binleft, &src);
+			string2bits(binright, &del);
+			//shift_right(&src);
+			//shift_right(&del);
+			//printf("DIV: %s / ", bits2string(&src));
+			//printf("%s\n", bits2string(&del));
+			divide_dc(&src, &del, binres);
+			
+			printf("BIN: %s\n", binres);
+			
+			double outval;
+			if ( ! SUCCESS( vmss_str2double(binres, 2, &outval) ) ) {
+				printf("INVALID 1");
+				continue;
+			}
+			
+			while( power-- ) outval *= 10.0f;
+			
+			vmss_double2str(outval, 10, binresdec, BIT_COUNT);
+			vmss_double2str(outval, 16, binreshex, BIT_COUNT);
+			
+/*
+			vmss_str2number(binres, 2, 10, binresdec, BIT_COUNT);
+			
+			divide_dc(&src, &del, binres);
+			vmss_str2number(binres, 2, 16, binreshex, BIT_COUNT);
+*/			
+			printf("============================\n Result: %s [%s]\n", binresdec, binreshex);
+
+		}
+		else {
+			printf("INVALID");
+		}
+		printf("\n");
+	}
 	
-	printf("%s", result);
+	fclose(hsrc);
 	
 	return 0;
 }
+

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8DD76FAC0486AB0100D96B5E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
 		8DD76FB00486AB0100D96B5E /* Lab2a.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6A0FF2C0290799A04C91782 /* Lab2a.1 */; };
+		B863FF20116158FA005CA059 /* vmss_convert.c in Sources */ = {isa = PBXBuildFile; fileRef = B863FF1C116158FA005CA059 /* vmss_convert.c */; };
+		B863FF21116158FA005CA059 /* vmss_string.c in Sources */ = {isa = PBXBuildFile; fileRef = B863FF1E116158FA005CA059 /* vmss_string.c */; };
+		B863FF2611615925005CA059 /* vmss_bitfields.c in Sources */ = {isa = PBXBuildFile; fileRef = B863FF2511615925005CA059 /* vmss_bitfields.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +30,13 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8DD76FB20486AB0100D96B5E /* Lab2a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab2a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B863FF1B116158FA005CA059 /* vmss_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmss_common.h; sourceTree = "<group>"; };
+		B863FF1C116158FA005CA059 /* vmss_convert.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vmss_convert.c; sourceTree = "<group>"; };
+		B863FF1D116158FA005CA059 /* vmss_convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmss_convert.h; sourceTree = "<group>"; };
+		B863FF1E116158FA005CA059 /* vmss_string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vmss_string.c; sourceTree = "<group>"; };
+		B863FF1F116158FA005CA059 /* vmss_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmss_string.h; sourceTree = "<group>"; };
+		B863FF2411615925005CA059 /* vmss_bitfields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmss_bitfields.h; sourceTree = "<group>"; };
+		B863FF2511615925005CA059 /* vmss_bitfields.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vmss_bitfields.c; sourceTree = "<group>"; };
 		C6A0FF2C0290799A04C91782 /* Lab2a.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Lab2a.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +64,14 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B863FF1B116158FA005CA059 /* vmss_common.h */,
+				B863FF1C116158FA005CA059 /* vmss_convert.c */,
+				B863FF1D116158FA005CA059 /* vmss_convert.h */,
+				B863FF1E116158FA005CA059 /* vmss_string.c */,
+				B863FF1F116158FA005CA059 /* vmss_string.h */,
 				08FB7796FE84155DC02AAC07 /* main.c */,
+				B863FF2411615925005CA059 /* vmss_bitfields.h */,
+				B863FF2511615925005CA059 /* vmss_bitfields.c */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -119,6 +136,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76FAC0486AB0100D96B5E /* main.c in Sources */,
+				B863FF20116158FA005CA059 /* vmss_convert.c in Sources */,
+				B863FF21116158FA005CA059 /* vmss_string.c in Sources */,
+				B863FF2611615925005CA059 /* vmss_bitfields.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
